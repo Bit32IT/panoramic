@@ -2,6 +2,10 @@ module Panoramic
   class Resolver < ActionView::Resolver
     require "singleton"
     include Singleton
+    
+    def find_all(name, prefix, partial, details, key=nil, locals=[])
+      find_templates(name, prefix, partial, details, key,locals)
+    end
 
     # this method is mandatory to implement a Resolver
     def find_templates(name, prefix, partial, details, key=nil, locals=[])
